@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="span12">
 			<ul class="breadcrumb">
-				<li><a href="index.html">Home</a> <span class="divider">/</span></li>
+				<li><a href="index.html">Trang chủ</a> <span class="divider">/</span></li>
 				<li class="active">Giỏ hàng</li>
 			</ul>
 			<div class="well well-small">
@@ -74,12 +74,18 @@
 						<td></td>
 					</tr>
 				</table>
-				<br /> <a href="products.html" class="shopBtn btn-large"><span
-					class="icon-arrow-left"></span> Tiếp tục mua sắm </a> <a
-					href="login.html" class="shopBtn btn-large pull-right">Thanh
-					toán <span class="icon-arrow-right"></span>
-				</a>
-
+				<br /> <a href="<c:url value="/trang-chu" />" class="shopBtn btn-large"><span
+					class="icon-arrow-left"></span> Tiếp tục mua sắm </a>
+				<c:if test="${empty LoginInfo }">
+					<a href="<c:url value="/dang-nhap" />"
+					class="shopBtn btn-large pull-right">Thanh toán <span
+					class="icon-arrow-right"></span></a>
+				</c:if>
+				<c:if test="${not empty LoginInfo }">
+					<a href="<c:url value="/checkout" />"
+					class="shopBtn btn-large pull-right">Thanh toán <span
+					class="icon-arrow-right"></span></a>
+				</c:if>
 			</div>
 		</div>
 	</div>
