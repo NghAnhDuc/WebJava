@@ -1,5 +1,6 @@
 package CafeShop.Controller.User;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +25,22 @@ public class UserController extends BaseController{
 		return _mvShare;
 	}
 	
+	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
+	public ModelAndView Login() {
+		_mvShare.setViewName("user/account/login");
+		_mvShare.addObject("user", new Users());
+		return _mvShare;
+	}
+	
+	
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.POST)
 	public ModelAndView CreateAcc(@ModelAttribute("user") Users user) {
 		int count= accountService.AddAccount(user);
-		if(count > 0) {
-			_mvShare.addObject("status", "Đăng ký tài khoản thành công!");
+		if(count > 0) {	
+			_mvShare.addObject("status", "Đăng ký thành công!");
 
 		}else {	
-			_mvShare.addObject("status", "Đăng ký tài khoản thất bại!");
+			_mvShare.addObject("status", "Đăng ký thất bại!");
 
 		}
 		_mvShare.setViewName("user/account/register");
@@ -40,15 +49,21 @@ public class UserController extends BaseController{
 	
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
 	public ModelAndView Login(HttpSession session,@ModelAttribute("user") Users user) {
-		boolean check = accountService.CheckAccount(user);
-		if(check) {
+		user = accountService.CheckAccount(user);
+		if(user != null) {
 			_mvShare.setViewName("redirect:trang-chu");
 			session.setAttribute("LoginInfo", user);
 
 		}else {	
-			_mvShare.addObject("statusLogin", "Đăng nhập tài khoản thất bại!");
+			_mvShare.addObject("statusLogin", "Đăng nhập thất bại!");
 
 		}
 		return _mvShare;
+	}
+	
+	@RequestMapping(value = "/dang-xuat", method = RequestMethod.GET)
+	public String Logout(HttpSession session, HttpServletRequest req) {
+		session.removeAttribute("LoginInfo");
+		return "redirect:"+req.getHeader("Referer");
 	}
 }

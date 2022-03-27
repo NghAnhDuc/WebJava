@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 
 <head>
-<title>Đăng ký tài khoản</title>
+<title>Đăng nhập</title>
 </head>
 <body>
 	<div class="row">
@@ -103,17 +103,21 @@
 		<div class="span9">
 			<ul class="breadcrumb">
 				<li><a href="index.html">Trang chủ</a> <span class="divider">/</span></li>
-				<li class="active">Đăng ký</li>
+				<li class="active">Đăng nhập</li>
 			</ul>
-			<h3>Đăng ký</h3>
+			<h3>Đăng nhập</h3>
 			<hr class="soft" />
 			<div class="row">
+		
 				<div class="span9">
 					<div class="well">
-						<h5>Đăng ký tài khoản</h5>
-						<form:form action="dang-ky" method="POST" modelAttribute="user" class="form-horizontal">
+						<h5>Đăng nhập hệ thống</h5>
+						<c:if test="${statusLogin }">
+							<h1>${statusLogin }</h1>
+						</c:if>
+						<form:form action="dang-nhap" method="POST" modelAttribute="user" class="form-horizontal">
 							<div class="control-group">
-								<label class="control-label" for="inputEmail">E-mail </label>
+								<label class="control-label" for="inputEmail">E-mail</label>
 								<div class="controls">
 									<form:input type="email" class="span3"
 										placeholder="Mời nhập email" path="user" />
@@ -124,30 +128,17 @@
 									khẩu</label>
 								<div class="controls">
 									<form:input type="password" class="span3"
-										placeholder="Mời nhập mật khẩu" path="password" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputDisplayName">Họ
-									và tên</label>
-								<div class="controls">
-									<form:input type="text" class="span3"
-										placeholder="Mời nhập họ và tên" path="display_name" />
+										placeholder="Mời nhập mật khẩu"  path="password" />
 
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputAddress"> Địa chỉ</label>
 								<div class="controls">
-									<form:input type="text" class="span3"
-										placeholder="Mời nhập địa chỉ" path="address" />
+									<button type="submit" class="btn default ">Đăng nhập</button>
+									<a href="#">Quên mật khẩu?</a>
 								</div>
 							</div>
-							<div class="controls">
-								<button type="submit" class="btn block">Đăng ký</button>
-							</div>
-						</</form:form>
-
+						</form:form>
 					</div>
 				</div>
 			</div>

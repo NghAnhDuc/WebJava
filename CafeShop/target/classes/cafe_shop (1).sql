@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 28, 2022 lúc 12:20 AM
+-- Thời gian đã tạo: Th3 23, 2022 lúc 10:53 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 7.4.27
 
@@ -20,52 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `cafe_shop`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `billdetail`
---
-
-CREATE TABLE `billdetail` (
-  `id` bigint(20) NOT NULL,
-  `id_product` bigint(20) NOT NULL,
-  `id_bills` bigint(20) NOT NULL,
-  `quanty` int(11) NOT NULL,
-  `total` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `billdetail`
---
-
-INSERT INTO `billdetail` (`id`, `id_product`, `id_bills`, `quanty`, `total`) VALUES
-(4, 24, 3, 1, 200000),
-(5, 11, 3, 1, 200000);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `bills`
---
-
-CREATE TABLE `bills` (
-  `id` bigint(20) NOT NULL,
-  `user` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `display_name` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `total` double NOT NULL,
-  `quanty` int(11) NOT NULL,
-  `note` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `bills`
---
-
-INSERT INTO `bills` (`id`, `user`, `phone`, `display_name`, `address`, `total`, `quanty`, `note`) VALUES
-(3, 'test@gmail.com', '0899345766', 'Duc Nghiem', '123', 400000, 2, 'hi');
 
 -- --------------------------------------------------------
 
@@ -235,44 +189,9 @@ INSERT INTO `slides` (`id`, `img`, `caption`, `content`) VALUES
 (3, 'carousel3.png', 'Hinh 3', 'Highly Google seo friendly'),
 (4, 'bootstrap-templates.png', 'Hinh 4', 'Compitable to many more opensource cart');
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `users`
---
-
-CREATE TABLE `users` (
-  `id` bigint(11) NOT NULL,
-  `user` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `display_name` varchar(150) NOT NULL,
-  `address` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `users`
---
-
-INSERT INTO `users` (`id`, `user`, `password`, `display_name`, `address`) VALUES
-(145, 'test@gmail.com', '$2a$12$gw2qvFw7Rzf4WZvx0/BsZeNGEGtyljkGYLV09czcr.CujF8hfDSlu', 'Duc Nghiem', '');
-
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `billdetail`
---
-ALTER TABLE `billdetail`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_product` (`id_product`),
-  ADD KEY `id_bills` (`id_bills`);
-
---
--- Chỉ mục cho bảng `bills`
---
-ALTER TABLE `bills`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `categories`
@@ -307,26 +226,8 @@ ALTER TABLE `slides`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
-
---
--- AUTO_INCREMENT cho bảng `billdetail`
---
-ALTER TABLE `billdetail`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT cho bảng `bills`
---
-ALTER TABLE `bills`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -359,21 +260,8 @@ ALTER TABLE `slides`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
-
---
 -- Các ràng buộc cho các bảng đã đổ
 --
-
---
--- Các ràng buộc cho bảng `billdetail`
---
-ALTER TABLE `billdetail`
-  ADD CONSTRAINT `billdetail_ibfk_1` FOREIGN KEY (`id_bills`) REFERENCES `bills` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `billdetail_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `colors`
