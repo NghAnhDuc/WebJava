@@ -46,31 +46,29 @@ Body Section
 						<form class="form-horizontal qtyFrm" method="get"
 							action="<c:url value="/AddCart/${product.id_product }"/>">
 							<div class="control-group">
+								<label class="control-label"><span>Giá :</span></label>
 								<label class="control-label"><span><fmt:formatNumber
 											type="number" groupingUsed="true" value="${product.price } " />₫</span></label>
-								<div class="controls">
+								<!-- <div class="controls">
 									<input type="number" min="0" value="0" class="span6">
-								</div>
+								</div> -->
 							</div>
 
 							<div class="control-group">
-								<label class="control-label"><span>Color</span></label>
-								<div class="controls">
-									<select class="span11">
+								<label class="control-label"><span>Màu sản phẩm :</span></label>
+								<div class="control-label">
+									<select class="span8" >
 										<option>Red</option>
 										<option>Purple</option>
 										<option>Pink</option>
 										<option>Red</option>
 									</select>
 								</div>
-							</div>
-
-							<h4></h4>
-							<p>${product.title }
-							<p>
-								<button type="submit" class="shopBtn">
-									<span class=" icon-shopping-cart"></span> Thêm vào giỏ hàng
-								</button>
+							</div>							
+							<p>${product.title }</p>
+							<button type="submit" class="shopBtn">
+								<span class=" icon-shopping-cart"></span> Thêm vào giỏ hàng
+							</button>
 						</form>
 					</div>
 				</div>
@@ -109,9 +107,9 @@ Body Section
 											₫
 										</h3>
 										<div class="btn-group">
-											<a href="<c:url value="/AddCart/${item.id_product }"/>" class="defaultBtn"><span
-												class=" icon-shopping-cart"></span> Add to cart</a> <a
-												href="${item.id_product }" class="shopBtn">VIEW</a>
+											<a href="<c:url value="/AddCart/${item.id_product }"/>"
+												class="defaultBtn"><span class=" icon-shopping-cart"></span>
+												Add to cart</a> <a href="${item.id_product }" class="shopBtn">VIEW</a>
 										</div>
 									</form>
 								</div>

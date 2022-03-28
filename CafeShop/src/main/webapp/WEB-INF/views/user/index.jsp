@@ -121,6 +121,7 @@ Body Section
 		<!--
 New Products
 -->
+		
 		<div class="well well-small">
 			<h3>Sản phẩm mới</h3>
 			<hr class="soften" />
@@ -128,10 +129,10 @@ New Products
 				<div id="newProductCar" class="carousel slide">
 					<div class="carousel-inner">
 					
-					<c:if test="${products.size() > 0 }">
+					<c:if test="${productsNew.size() > 0 }">
 						<div class="item active">
 							<ul class="thumbnails">
-							<c:forEach var="item" items="${ products }" varStatus="loop">
+							<c:forEach var="item" items="${ productsNew }" varStatus="loop">
 							<li class="span3">
 								<div class="thumbnail">
 									<a class="zoomTool" href="chi-tiet-san-pham/${item.id_product }" title="add to cart"><span
@@ -140,10 +141,10 @@ New Products
 										src="<c:url value="/assets/user/img/${item.img }"/>" alt=""></a>
 								</div>
 							</li>
-							<c:if test="${ (loop.index + 1) % 4 == 0 || (loop.index + 1) == products.size() }">
+							<c:if test="${ (loop.index + 1) % 4 == 0 || (loop.index + 1) == productsNew.size() }">
 									</ul>
 								</div>
-								<c:if test="${ (loop.index + 1) < products.size() }">
+								<c:if test="${ (loop.index + 1) < productsNew.size() }">
 									<div class="item">
 										<ul class="thumbnails">
 								</c:if>
@@ -161,6 +162,7 @@ New Products
 		<!--
 	Featured Products
 	-->
+		
 		<div class="well well-small">
 			<h3>
 				<a class="btn btn-mini pull-right" href="products.html"
@@ -169,9 +171,9 @@ New Products
 			</h3>
 			<hr class="soften" />
 			<div class="row-fluid">
-				<c:if test="${ products.size() > 0 }">
+				<c:if test="${ productsHighlight.size() > 0 }">
 					<ul class="thumbnails">
-						<c:forEach var="item" items="${ products }" varStatus="loop">
+						<c:forEach var="item" items="${ productsHighlight }" varStatus="loop">
 							<li class="span4">
 								<div class="thumbnail">
 									<a class="zoomTool" href="chi-tiet-san-pham/${item.id_product }" title="add to cart"><span
@@ -191,9 +193,9 @@ New Products
 									</div>
 								</div>
 							</li>
-							<c:if test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1) == products.size() }">
+							<c:if test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1) == productsHighlight.size() }">
 								</ul>
-								<c:if test="${ (loop.index + 1) < products.size() }">
+								<c:if test="${ (loop.index + 1) < productsHighlight.size() }">
 									<ul class="thumbnails">
 								</c:if>
 							</c:if>

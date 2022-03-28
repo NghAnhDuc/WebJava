@@ -45,10 +45,10 @@ public class ProductsDao extends BaseDao {
 		StringBuffer sql = SqlString();
 		sql.append("WHERE 1 = 1 ");
 		if(newProduct) {
-			sql.append("AND p.highlight = true ");
+			sql.append("AND p.new_product = true ");		
 		}
 		if(highlight) {
-			sql.append("AND p.new_product = true ");		
+			sql.append("AND p.highlight = true ");
 		}
 		sql.append("GROUP BY p.id, c.id_product ");
 		sql.append("ORDER BY RAND() ");
@@ -76,6 +76,18 @@ public class ProductsDao extends BaseDao {
 
 	public List<ProductsDto> GetDataProducts() {
 		String sql = SqlProduct(YES, NO);
+		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return list;
+	}
+	
+	public List<ProductsDto> GetDataProductsNew() {
+		String sql = SqlProduct(YES, NO);
+		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return list;
+	}
+	
+	public List<ProductsDto> GetDataProductsHighlight() {
+		String sql = SqlProduct(NO, YES);
 		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return list;
 	}
@@ -117,6 +129,26 @@ public class ProductsDao extends BaseDao {
 		return product;
 	}
 	////
-	
+	////
+	public List<ProductsDto> GetAllProducts() {
+		String sql = SqlString().toString();
+		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return list;
+	}
+	private String SqlProductPaginate2(int start, int totalPage) {
+		StringBuffer sql = SqlString();
+		sql.append("LIMIT  " + start + ", " + totalPage);
+		return sql.toString();
+	}
+	public List<ProductsDto> GetDataProductsPaginate2(int start, int totalPage) {
+		StringBuffer sqlGetData = SqlString();
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sqlGetData.toString(), new ProductsDtoMapper());
+		List<ProductsDto> list = new ArrayList<ProductsDto>();
+		if(listProducts.size() > 0) {
+			String sql = SqlProductPaginate2(start, totalPage);
+			list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		}
+		return list;
+	}
 	
 }

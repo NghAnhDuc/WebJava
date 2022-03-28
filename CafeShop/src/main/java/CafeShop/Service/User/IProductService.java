@@ -10,6 +10,7 @@ import CafeShop.Dto.ProductsDto;
 public interface IProductService {	
 	public ProductsDto GetProductByID(long id);
 	public List<ProductsDto> GetProductByIDCategory(int id);
-	
-
+//	public List<ProductsDto> GetAllProductsByID(int id);
+	public List<ProductsDto> GetDataProductsPaginate(int start, int totalPage);
+	public List<ProductsDto> GetAllProducts();
 }

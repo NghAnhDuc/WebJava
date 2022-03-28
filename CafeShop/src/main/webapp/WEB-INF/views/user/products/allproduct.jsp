@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 
 <head>
-<title>Sản phẩm theo loại</title>
+<title>Sản phẩm</title>
 <style>
 .pagination {
 	display: flex;
@@ -31,15 +31,16 @@
 </style>
 </head>
 <body>
-	<h1>${ productsPaginate.size() }</h1>
+
 	<div class="well well-small">
 		<div class="row">
-			<span style="margin-left: 25px">Danh sách sản phẩm theo loại</span> <select
+			<span style="margin-left: 25px">Danh sách sản phẩm</span> <select
 				class="pull-right">
 				<option>A - Z</option>
 				<option>Cao - Thấp</option>
 			</select>
 		</div>
+
 		<c:if test="${ productsPaginate.size() > 0 }">
 			<div class="row-fluid">
 				<ul class="thumbnails">
@@ -84,19 +85,20 @@
 		</c:if>
 		</c:forEach>
 		</c:if>
-	</div>
 
+
+	</div>
 	<div class="pagination">
 		<c:forEach var="item" begin="1" end="${paginatesInfo.totalPage }"
 			varStatus="loop">
 			<c:if test="${ (loop.index) ==  paginatesInfo.currentPage}">
 				<a
-					href="<c:url value="/loai-san-pham/${idCategory }/${loop.index}"/>"
+					href="<c:url value="/san-pham/${loop.index}"/>"
 					class="active">${ (loop.index)}</a>
 			</c:if>
 			<c:if test="${ (loop.index) !=  paginatesInfo.currentPage}">
 				<a
-					href="<c:url value="/loai-san-pham/${idCategory }/${loop.index}"/>">${ (loop.index)}</a>
+					href="<c:url value="/san-pham/${loop.index}"/>">${ (loop.index)}</a>
 			</c:if>
 		</c:forEach>
 	</div>
