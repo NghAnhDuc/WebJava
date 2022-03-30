@@ -92,8 +92,6 @@ public class CartController extends BaseController {
 
 	@RequestMapping(value = "checkout", method = RequestMethod.POST)
 	public String CheckOutBill(HttpServletRequest req, HttpSession session, @ModelAttribute("bills") Bills bill) {
-//		bill.setQuanty(Integer.parseInt((String) session.getAttribute("TotalQuantyCart")));
-//		bill.setTotal(Double.parseDouble((String) session.getAttribute("TotalPriceCart")));
 		Integer str1 = (Integer) session.getAttribute("TotalQuantyCart");
 		bill.setQuanty(str1);
 		Double str2 = (Double) session.getAttribute("TotalPriceCart");

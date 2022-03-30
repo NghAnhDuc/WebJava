@@ -24,10 +24,10 @@
 				<br> <strong> Support (24/7) : 0800 1234 678 </strong><br>
 				<br>
 			</p>
-			<span class="btn btn-mini">[${TotalQuantyCart }]  <span
-				class="icon-shopping-cart"></span></span> <!-- <span
-				class="btn btn-warning btn-mini">$</span> <span class="btn btn-mini">&pound;</span> -->
-			<!-- <span class="btn btn-mini">&euro;</span> -->
+			<%-- <span class="btn btn-mini">[${TotalQuantyCart }] <span
+				class="icon-shopping-cart"></span></span> <span
+				class="btn btn-warning btn-mini">$</span> <span class="btn btn-mini">&pound;</span>
+			<span class="btn btn-mini">&euro;</span> --%>
 		</div>
 	</div>
 </header>

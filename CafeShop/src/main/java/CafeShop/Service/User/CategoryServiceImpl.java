@@ -11,14 +11,14 @@ import CafeShop.Dto.ProductsDto;
 @Service
 public class CategoryServiceImpl implements ICategoryService {
 	@Autowired
-	private ProductsDao dao;
+	private ProductsDao productsDao;
 
 	public List<ProductsDto> GetAllProductsByID(int id) {
-		return dao.GetAllProductsByID(id);
+		return productsDao.GetAllProductsByID(id);
 	}
 
 	public List<ProductsDto> GetDataProductsPaginate(int id, int start, int totalPage) {
-		return dao.GetDataProductsPaginate(id, start, totalPage);
+		return productsDao.GetDataProductsPaginate(id, start, totalPage);
 	}
 
 
