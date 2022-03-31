@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 30, 2022 lúc 12:08 PM
--- Phiên bản máy phục vụ: 10.4.22-MariaDB
--- Phiên bản PHP: 7.4.27
+-- Host: 127.0.0.1
+-- Generation Time: Mar 31, 2022 at 03:28 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,15 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `cafe_shop`
+-- Database: `cafe_shop`
 --
-CREATE DATABASE IF NOT EXISTS `cafe_shop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `cafe_shop`;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `billdetail`
+-- Table structure for table `billdetail`
 --
 
 CREATE TABLE `billdetail` (
@@ -38,7 +36,7 @@ CREATE TABLE `billdetail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `billdetail`
+-- Dumping data for table `billdetail`
 --
 
 INSERT INTO `billdetail` (`id`, `id_product`, `id_bills`, `quanty`, `total`) VALUES
@@ -53,7 +51,7 @@ INSERT INTO `billdetail` (`id`, `id_product`, `id_bills`, `quanty`, `total`) VAL
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bills`
+-- Table structure for table `bills`
 --
 
 CREATE TABLE `bills` (
@@ -68,7 +66,7 @@ CREATE TABLE `bills` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `bills`
+-- Dumping data for table `bills`
 --
 
 INSERT INTO `bills` (`id`, `user`, `phone`, `display_name`, `address`, `total`, `quanty`, `note`) VALUES
@@ -80,7 +78,7 @@ INSERT INTO `bills` (`id`, `user`, `phone`, `display_name`, `address`, `total`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -90,7 +88,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`) VALUES
@@ -102,7 +100,7 @@ INSERT INTO `categories` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `colors`
+-- Table structure for table `colors`
 --
 
 CREATE TABLE `colors` (
@@ -114,7 +112,7 @@ CREATE TABLE `colors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `colors`
+-- Dumping data for table `colors`
 --
 
 INSERT INTO `colors` (`id`, `id_product`, `name`, `code`, `img`) VALUES
@@ -147,30 +145,7 @@ INSERT INTO `colors` (`id`, `id_product`, `name`, `code`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `menu`
---
-
-CREATE TABLE `menu` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `url` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `menu`
---
-
-INSERT INTO `menu` (`id`, `name`, `url`) VALUES
-(1, 'Trang chủ', NULL),
-(2, 'Sản phẩm', NULL),
-(3, 'Giỏ hàng', NULL),
-(4, 'Bài viết', NULL),
-(5, 'Liên hệ', NULL);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -189,43 +164,41 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `id_category`, `sizes`, `name`, `price`, `sale`, `title`, `highlight`, `new_product`, `details`, `created_at`, `updated_at`) VALUES
 (1, 1, 'L,M,S', 'Manicure & Pedicure', 20000, 0, 'Nowadays the lingerie industry is one of the most successful business spheres. Nowadays the lingerie industry is one of ...', 1, 0, '<div class=\"tab-pane fade active in\" id=\"home\">\r\n			  <h4>Product Information</h4>\r\n                <table class=\"table table-striped\">\r\n				<tbody>\r\n				<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Color:</td><td class=\"techSpecTD2\">Black</td></tr>\r\n				<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Style:</td><td class=\"techSpecTD2\">Apparel,Sports</td></tr>\r\n				<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Season:</td><td class=\"techSpecTD2\">spring/summer</td></tr>\r\n				<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Usage:</td><td class=\"techSpecTD2\">fitness</td></tr>\r\n				<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Sport:</td><td class=\"techSpecTD2\">122855031</td></tr>\r\n				<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Brand:</td><td class=\"techSpecTD2\">Shock Absorber</td></tr>\r\n				</tbody>\r\n				</table>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n				<p>Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>\r\n\r\n			</div>', '2020-04-09 11:38:43', '2020-04-09 11:47:31'),
-(2, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(3, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(4, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(5, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(6, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(7, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(8, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(9, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(10, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(11, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(12, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 0, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(13, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(14, 4, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(15, 4, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(16, 4, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(17, 4, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(18, 3, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(19, 3, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(20, 3, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(21, 3, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(22, 2, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(23, 2, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(24, 2, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(25, 2, 'L,S,M', 'Name', 200000, 0, 'tital', 0, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(26, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(27, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(28, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43');
+(2, 1, 'L,S,M', 'Lắc tay Kim cương Vàng trắng 14K PNJ First Diamond', 200000, 0, 'Lắc tay Kim cương Vàng trắng 14K PNJ First Diamond DD', 1, 0, 'Lắc tay Kim cương Vàng trắng 14K PNJ First Diamond DD', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(3, 1, 'L,S,M', 'Lắc tay Kim cương Vàng trắng 14K PNJ DD00W000018', 200000, 0, 'Lắc tay Kim cương Vàng trắng 14K PNJ DD00W000018', 1, 0, 'Lắc tay Kim cương Vàng trắng 14K PNJ DD00W000018', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(4, 1, 'L,S,M', 'Vòng tay Kim cương Vàng 18K PNJ DDDDC000001', 200000, 0, 'Vòng tay Kim cương Vàng 18K PNJ DDDDC000001', 1, 0, 'Vòng tay Kim cương Vàng 18K PNJ DDDDC000001', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(5, 1, 'L,S,M', 'Lắc tay kim cương Vàng trắng 14K PNJ DDDDW000086', 200000, 0, 'Lắc tay kim cương Vàng trắng 14K PNJ DDDDW000086', 1, 0, 'Lắc tay kim cương Vàng trắng 14K PNJ DDDDW000086', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(6, 1, 'L,S,M', 'Vỏ lắc tay Kim cương Vàng trắng 18K PNJ 00DDW000053', 200000, 0, 'Vỏ lắc tay Kim cương Vàng trắng 18K PNJ 00DDW000053', 1, 0, 'Vỏ lắc tay Kim cương Vàng trắng 18K PNJ 00DDW000053', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(7, 1, 'L,S,M', 'Lắc tay Kim cương Vàng trắng 14K PNJ DDDDW000260', 200000, 0, 'Lắc tay Kim cương Vàng trắng 14K PNJ DDDDW000260', 1, 0, 'Lắc tay Kim cương Vàng trắng 14K PNJ DDDDW000260', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(8, 1, 'L,S,M', 'Vỏ vòng tay Kim cương Vàng trắng 18K PNJ 00DDW000276', 200000, 0, 'Vỏ vòng tay Kim cương Vàng trắng 18K PNJ 00DDW000276', 1, 0, 'Vỏ vòng tay Kim cương Vàng trắng 18K PNJ 00DDW000276', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(9, 1, 'L,S,M', 'Vỏ lắc tay Kim cương Vàng trắng 18K PNJ 00DDW000052', 200000, 0, 'Vỏ lắc tay Kim cương Vàng trắng 18K PNJ 00DDW000052', 1, 0, 'Vỏ lắc tay Kim cương Vàng trắng 18K PNJ 00DDW000052', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(10, 1, 'L,S,M', 'Mặt dây chuyền Bạc đính đá STYLE By PNJ XMXMX000001', 200000, 0, 'Mặt dây chuyền Bạc đính đá STYLE By PNJ XMXMX000001', 1, 0, 'Mặt dây chuyền Bạc đính đá STYLE By PNJ XMXMX000001', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(11, 1, 'L,S,M', 'Mặt dây chuyền Vàng 10K đính đá ECZ PNJ True Love XMXMY004970', 200000, 0, 'Mặt dây chuyền Vàng 10K đính đá ECZ PNJ True Love XMXMY004970', 1, 0, 'Mặt dây chuyền Vàng 10K đính đá ECZ PNJ True Love XMXMY004970', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(12, 1, 'L,S,M', 'Mặt dây chuyền Vàng 18K đính đá ECZ PNJ XM00Y001547', 200000, 0, 'Mặt dây chuyền Vàng 18K đính đá ECZ PNJ XM00Y001547', 1, 0, 'Mặt dây chuyền Vàng 18K đính đá ECZ PNJ XM00Y001547', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(13, 1, 'L,S,M', '\r\nMặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW060511', 200000, 0, '\r\nMặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW060511', 0, 1, '\r\nMặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW060511', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(14, 4, 'L,S,M', 'Mặt dây chuyền Vàng 10K đính đá ECZ PNJ Sứ giả mùa xuân ZTXMY000955', 200000, 0, 'Mặt dây chuyền Vàng 10K đính đá ECZ PNJ Sứ giả mùa xuân ZTXMY000955', 0, 1, 'Mặt dây chuyền Vàng 10K đính đá ECZ PNJ Sứ giả mùa xuân ZTXMY000955', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(15, 4, 'L,S,M', 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ Sứ giả mùa xuân ZTXMW000098', 200000, 0, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ Sứ giả mùa xuân ZTXMW000098', 0, 1, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ Sứ giả mùa xuân ZTXMW000098', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(16, 4, 'L,S,M', 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001807', 200000, 0, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001807', 0, 1, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001807', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(17, 4, 'L,S,M', 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001834', 200000, 0, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001834', 0, 1, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001834', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(18, 4, 'L,S,M', 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001833', 200000, 0, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001833', 0, 1, 'Mặt dây chuyền Vàng trắng 10K đính đá ECZ PNJ XMXMW001833', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(19, 3, 'L,S,M', 'Mặt dây chuyền Nam Vàng trắng 10K đính đá ECZ PNJ XM00W000599', 200000, 0, 'Mặt dây chuyền Nam Vàng trắng 10K đính đá ECZ PNJ XM00W000599', 0, 1, 'Mặt dây chuyền Nam Vàng trắng 10K đính đá ECZ PNJ XM00W000599', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(20, 3, 'L,S,M', 'Dây cổ Vàng 10K đính đá ECZ Disney|PNJ XM00H000033', 200000, 0, 'Dây cổ Vàng 10K đính đá ECZ Disney|PNJ XM00H000033', 0, 1, 'Dây cổ Vàng 10K đính đá ECZ Disney|PNJ XM00H000033', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(21, 3, 'L,S,M', 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060123', 200000, 0, 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060123', 0, 1, 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060123', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(22, 3, 'L,S,M', 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060122', 200000, 0, 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060122', 0, 1, 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060122', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(23, 3, 'L,S,M', 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060121', 200000, 0, 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060121', 0, 1, 'Dây cổ trẻ em Vàng trắng 10K đính đá ECZ PNJ XMXMW060121', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(24, 2, 'L,S,M', 'Dây cổ Vàng trắng 10K đính đá ECZ PNJ XMXMW000248', 200000, 0, 'Dây cổ Vàng trắng 10K đính đá ECZ PNJ XMXMW000248', 0, 1, 'Dây cổ Vàng trắng 10K đính đá ECZ PNJ XMXMW000248', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(25, 2, 'L,S,M', 'Dây cổ Vàng 10K đính đá ECZ PNJ Sứ giả mùa xuân XMXMY000454', 200000, 0, 'Dây cổ Vàng 10K đính đá ECZ PNJ Sứ giả mùa xuân XMXMY000454', 0, 1, 'Dây cổ Vàng 10K đính đá ECZ PNJ Sứ giả mùa xuân XMXMY000454', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `slides`
+-- Table structure for table `slides`
 --
 
 CREATE TABLE `slides` (
@@ -236,7 +209,7 @@ CREATE TABLE `slides` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `slides`
+-- Dumping data for table `slides`
 --
 
 INSERT INTO `slides` (`id`, `img`, `caption`, `content`) VALUES
@@ -248,7 +221,7 @@ INSERT INTO `slides` (`id`, `img`, `caption`, `content`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -260,18 +233,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `user`, `password`, `display_name`, `address`) VALUES
 (212, 'test@gmail.com', '$2a$12$uVpd.Exhkn3P.dR/0JBDyOPCCOs81s33nP9LqKcsgUxiKTTQU9vQK', 'Duc Nghiem', '123');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `billdetail`
+-- Indexes for table `billdetail`
 --
 ALTER TABLE `billdetail`
   ADD PRIMARY KEY (`id`),
@@ -279,120 +252,110 @@ ALTER TABLE `billdetail`
   ADD KEY `id_bills` (`id_bills`);
 
 --
--- Chỉ mục cho bảng `bills`
+-- Indexes for table `bills`
 --
 ALTER TABLE `bills`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `colors`
+-- Indexes for table `colors`
 --
 ALTER TABLE `colors`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_product` (`id_product`);
 
 --
--- Chỉ mục cho bảng `menu`
 --
-ALTER TABLE `menu`
-  ADD PRIMARY KEY (`id`);
-
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_category` (`id_category`);
 
 --
--- Chỉ mục cho bảng `slides`
+-- Indexes for table `slides`
 --
 ALTER TABLE `slides`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `billdetail`
+-- AUTO_INCREMENT for table `billdetail`
 --
 ALTER TABLE `billdetail`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `bills`
+-- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `colors`
+-- AUTO_INCREMENT for table `colors`
 --
 ALTER TABLE `colors`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT cho bảng `menu`
---
-ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT cho bảng `slides`
+-- AUTO_INCREMENT for table `slides`
 --
 ALTER TABLE `slides`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `billdetail`
+-- Constraints for table `billdetail`
 --
 ALTER TABLE `billdetail`
   ADD CONSTRAINT `billdetail_ibfk_1` FOREIGN KEY (`id_bills`) REFERENCES `bills` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `billdetail_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `colors`
+-- Constraints for table `colors`
 --
 ALTER TABLE `colors`
   ADD CONSTRAINT `colors_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -8,9 +8,9 @@ import CafeShop.Dto.ProductsDto;
 
 @Service
 public interface IProductService {	
+	public List<ProductsDto> GetProductsByID(long id);
+	public List<ProductsDto> GetDataProductsPaginate(int id, int start, int totalPage);
 	public ProductsDto GetProductByID(long id);
-	public List<ProductsDto> GetProductByIDCategory(int id);
-//	public List<ProductsDto> GetAllProductsByID(int id);
-	public List<ProductsDto> GetDataProductsPaginate(int start, int totalPage);
+	public List<ProductsDto> GetDataProductsPaginate2(int start, int totalPage);
 	public List<ProductsDto> GetAllProducts();
 }
