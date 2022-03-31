@@ -33,7 +33,7 @@ public class PaginatesServiceImpl implements IPaginatesService {
 			return 1;
 		}
 		if(currentPage > totalPage) {
-			return currentPage;
+			return totalPage;
 		}
 		return currentPage;
 	}

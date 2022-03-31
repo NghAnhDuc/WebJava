@@ -12,7 +12,7 @@ public class HomeController extends BaseController{
 		_mvShare.addObject("categories",_homeService.GetDataCategory());
 		_mvShare.addObject("productsNew",_homeService.GetDataProductsNew());
 		_mvShare.addObject("productsHighlight",_homeService.GetDataProductsHighlight());
-		_mvShare.setViewName("user/index");
+		_mvShare.setViewName("user/index2");
 		return _mvShare;
 	}
 

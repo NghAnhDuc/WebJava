@@ -46,8 +46,8 @@ Body Section
 						<form class="form-horizontal qtyFrm" method="get"
 							action="<c:url value="/AddCart/${product.id_product }"/>">
 							<div class="control-group">
-								<label class="control-label"><span>Giá :</span></label>
-								<label class="control-label"><span><fmt:formatNumber
+								<label class="control-label"><span>Giá :</span></label> <label
+									class="control-label"><span><fmt:formatNumber
 											type="number" groupingUsed="true" value="${product.price } " />₫</span></label>
 								<!-- <div class="controls">
 									<input type="number" min="0" value="0" class="span6">
@@ -57,14 +57,14 @@ Body Section
 							<div class="control-group">
 								<label class="control-label"><span>Màu sản phẩm :</span></label>
 								<div class="control-label">
-									<select class="span8" >
+									<select class="span8">
 										<option>Red</option>
 										<option>Purple</option>
 										<option>Pink</option>
 										<option>Red</option>
 									</select>
 								</div>
-							</div>							
+							</div>
 							<p>${product.title }</p>
 							<button type="submit" class="shopBtn">
 								<span class=" icon-shopping-cart"></span> Thêm vào giỏ hàng

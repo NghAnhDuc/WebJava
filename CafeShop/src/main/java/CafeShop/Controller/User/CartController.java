@@ -32,7 +32,7 @@ public class CartController extends BaseController {
 		_mvShare.addObject("slides", _homeService.GetDataSlide());
 		_mvShare.addObject("categories", _homeService.GetDataCategory());
 		_mvShare.addObject("products", _homeService.GetDataProducts());
-		_mvShare.setViewName("user/cart/list_cart");
+		_mvShare.setViewName("user/cart/list_cart2");
 		return _mvShare;
 	}
 
@@ -78,7 +78,7 @@ public class CartController extends BaseController {
 	
 	@RequestMapping(value = "checkout", method = RequestMethod.GET)
 	public ModelAndView CheckOut(HttpServletRequest req, HttpSession session) {
-		_mvShare.setViewName("user/bills/checkout");
+		_mvShare.setViewName("user/bills/checkout2");
 		Bills bills = new Bills();
 		Users loginInfo = (Users)session.getAttribute("LoginInfo");
 		if(loginInfo != null) {
@@ -101,7 +101,7 @@ public class CartController extends BaseController {
 			billsService.AddBillsDetail(carts);
 		}
 		session.removeAttribute("Cart");
-		return "redirect:gio-hang";
+		return "redirect:trang-chu";
 	}
 	
 	

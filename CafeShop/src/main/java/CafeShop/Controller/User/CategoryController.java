@@ -17,27 +17,28 @@ public class CategoryController extends BaseController {
 	@Autowired
 	private PaginatesServiceImpl paginatesService;
 	
-	private int totalProductsPage = 9;
+	private int totalProductsPage = 6;
 	
 	@RequestMapping(value = "/loai-san-pham/{id}")
 	public ModelAndView Product(@PathVariable String id) {
-		_mvShare.setViewName("user/products/category");
-		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();
+		_mvShare.setViewName("user/products/productcategory");
+		int totalData = categoryService.GetAllProductsByCategory(Integer.parseInt(id)).size();
 		PaginatesDto paginatesInfo = paginatesService.GetInfoPaginates(totalData, totalProductsPage, 1);
+		_mvShare.addObject("categories",_homeService.GetDataCategory());
 		_mvShare.addObject("idCategory", id);
 		_mvShare.addObject("paginatesInfo", paginatesInfo);
-		_mvShare.addObject("productsPaginate", categoryService.GetDataProductsPaginate(Integer.parseInt(id), paginatesInfo.getStart(), totalProductsPage));
+		_mvShare.addObject("productsPaginate", categoryService.GetDataProductsCategoryPaginate(Integer.parseInt(id), paginatesInfo.getStart(), totalProductsPage));
 		return _mvShare;
 	}
 	
 	@RequestMapping(value = "/loai-san-pham/{id}/{currentPage}")
 	public ModelAndView Product(@PathVariable String id, @PathVariable String currentPage) {
-		_mvShare.setViewName("user/products/category");
-		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();
+		_mvShare.setViewName("user/products/productcategory");
+		int totalData = categoryService.GetAllProductsByCategory(Integer.parseInt(id)).size();
 		PaginatesDto paginatesInfo = paginatesService.GetInfoPaginates(totalData, totalProductsPage, Integer.parseInt(currentPage));
 		_mvShare.addObject("idCategory", id);
 		_mvShare.addObject("paginatesInfo", paginatesInfo);
-		_mvShare.addObject("productsPaginate", categoryService.GetDataProductsPaginate(Integer.parseInt(id), paginatesInfo.getStart(), totalProductsPage));
+		_mvShare.addObject("productsPaginate", categoryService.GetDataProductsCategoryPaginate(Integer.parseInt(id), paginatesInfo.getStart(), totalProductsPage));
 		return _mvShare;
 	}
 }
