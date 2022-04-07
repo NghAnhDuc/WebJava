@@ -36,7 +36,8 @@ public class ProductController extends BaseController {
 
 	@RequestMapping(value = "/san-pham")
 	public ModelAndView Product() {
-		_mvShare.setViewName("user/products/allproduct2");
+		_mvShare.setViewName("user/products/allproduct");
+		_mvShare.addObject("categories",_homeService.GetDataCategory());
 		int totalData = _productService.GetAllProducts().size();
 		PaginatesDto paginatesInfo = paginatesService.GetInfoPaginates(totalData, totalProductsPage, 1);
 		_mvShare.addObject("paginatesInfo", paginatesInfo);
@@ -46,7 +47,7 @@ public class ProductController extends BaseController {
 
 	@RequestMapping(value = "/san-pham/{currentPage}")
 	public ModelAndView Product(@PathVariable String currentPage) {
-		_mvShare.setViewName("user/products/allproduct2");
+		_mvShare.setViewName("user/products/allproduct");
 		int totalData = _productService.GetAllProducts().size();
 		PaginatesDto paginatesInfo = paginatesService.GetInfoPaginates(totalData, totalProductsPage,
 				Integer.parseInt(currentPage));

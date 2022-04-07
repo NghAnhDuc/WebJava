@@ -3,110 +3,114 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title><decorator:title default="Master-Layout" /></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<!-- Bootstrap styles -->
-<link href="<c:url value="/assets/user/css/bootstrap.css"/>"
-	rel="stylesheet" />
-<!-- Customize styles -->
-<link href="<c:url value="/assets/user/style.css"/> " rel="stylesheet" />
-<!-- font awesome styles -->
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- Google Font -->
 <link
-	href="<c:url value="/assets/user/font-awesome/css/font-awesome.css"/>  "
+	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
 	rel="stylesheet">
 
-<link rel="shortcut icon"
-	href="<c:url value="/assets/user/ico/favicon.ico"/>">
+<!-- Css Styles -->
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/bootstrap.min.css"/> "
+	type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/font-awesome.min.css"/>  "
+	type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/elegant-icons.css"/>  "
+	type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/nice-select.css"/> "
+	type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/jquery-ui.min.css"/>  "
+	type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/owl.carousel.min.css"/>  "
+	type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/slicknav.min.css"/>  "
+	type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/assets/user2/css/style.css"/>  " type="text/css">
+
+<!--===============================================================================================-->
+<link rel="icon" type="image/png"
+	href="<c:url value="/assets/login&register/images/icons/favicon.ico"/>" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/login&register/vendor/bootstrap/css/bootstrap.min.css"/>">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/login&register/fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/login&register/vendor/animate/animate.css"/>">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/login&register/vendor/css-hamburgers/hamburgers.min.css"/>">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/login&register/vendor/select2/select2.min.css"/>">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/login&register/css/util.css"/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/assets/login&register/css/main.css"/>">
+
 <decorator:head></decorator:head>
 </head>
+
 <body>
-	<!-- 
-	Upper Header Section 
--->
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="topNav">
-			<div class="container">
-				<div class="alignR">
-					<div class="pull-left socialNw">
-						<a href="#"><span class="icon-twitter"></span></a> <a href="#"><span
-							class="icon-facebook"></span></a> <a href="#"><span
-							class="icon-youtube"></span></a> <a href="#"><span
-							class="icon-tumblr"></span></a>
-					</div>
-					<a class="active" href="<c:url value="/trang-chu"/>"> <span
-						class="icon-home"></span> Trang chủ
-					</a>
-					<c:if test="${empty LoginInfo }">
-						<a href="#"><span class="icon-user"></span> Tài khoản</a>
-						<a href="<c:url value="/dang-ky"/>"><span class="icon-edit"></span>
-							Đăng ký </a>
-						<a href="<c:url value="/dang-nhap"/>"><span
-							class="icon-signin"></span> Đăng nhập</a>
-					</c:if>
-					<c:if test="${not empty LoginInfo }">
-						<a href="#"><span class="icon-user"></span>${LoginInfo.display_name}</a>
-						<a href="<c:url value="/dang-xuat"/>"><span
-							class="icon-signout"></span> Đăng xuất</a>
-					</c:if>
-					<a href="<c:url value="/gio-hang"/>"><span
-						class="icon-shopping-cart"></span> ${TotalQuantyCart } Sản phẩm -
-						<span class="badge badge-warning"><fmt:formatNumber
-								type="number" groupingUsed="true" value="${TotalPriceCart }" />₫</span></a>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<!--
-Lower Header Section 
--->
-	<div class="container">
-		<div id="gototop"></div>
+	<%@include file="/WEB-INF/views/layouts/user/header.jsp"%>
 
-		<%@include file="/WEB-INF/views/layouts/user/header.jsp"%>
+	<decorator:body></decorator:body>
 
-		<decorator:body></decorator:body>
+	<%@include file="/WEB-INF/views/layouts/user/footer.jsp"%>
 
-		<%@include file="/WEB-INF/views/layouts/user/footer.jsp"%>
+	<!-- Js Plugins -->
+	<script src="<c:url value="/assets/user2/js/jquery-3.3.1.min.js"/> "></script>
+	<script src="<c:url value="/assets/user2/js/bootstrap.min.js"/> "></script>
+	<script
+		src="<c:url value="/assets/user2/js/jquery.nice-select.min.js"/> "></script>
+	<script src="<c:url value="/assets/user2/js/jquery-ui.min.js"/> "></script>
+	<script src="<c:url value="/assets/user2/js/jquery.slicknav.js"/> "></script>
+	<script src="<c:url value="/assets/user2/js/mixitup.min.js"/> "></script>
+	<script src="<c:url value="/assets/user2/js/owl.carousel.min.js"/> "></script>
+	<script src="<c:url value="/assets/user2/js/main.js"/> "></script>
 
-		<!-- /container -->
+	<decorator:getProperty property="page.script"></decorator:getProperty>
 
-		<div class="copyright">
-			<div class="container">
-				<p class="pull-right">
-					<a href="#"><img
-						src="<c:url value="/assets/user/img/maestro.png"/> " alt="payment"></a>
-					<a href="#"><img
-						src="<c:url value="/assets/user/img/mc.png"/> " alt="payment"></a>
-					<a href="#"><img
-						src="<c:url value="/assets/user/img/pp.png"/> " alt="payment"></a>
-					<a href="#"><img
-						src="<c:url value="/assets/user/img/visa.png"/> " alt="payment"></a>
-					<a href="#"><img
-						src="<c:url value="/assets/user/img/disc.png"/>" alt="payment"></a>
-				</p>
-				<span>Copyright &copy; 2013<br> bootstrap ecommerce
-					shopping template
-				</span>
-			</div>
-		</div>
-		<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="<c:url value="/assets/user/js/jquery.js"/> "></script>
-		<script src="<c:url value="/assets/user/js/bootstrap.min.js"/>  "></script>
-		<script
-			src="<c:url value="/assets/user/js/jquery.easing-1.3.min.js"/>  "></script>
-		<script
-			src="<c:url value="/assets/user/js/jquery.scrollTo-1.4.3.1-min.js"/>  "></script>
-		<script src="<c:url value="/assets/user/js/shop.js"/>  "></script>
+	<!--===============================================================================================-->
+	<script
+		src="<c:url value="/assets/login&register/vendor/jquery/jquery-3.2.1.min.js"/>"></script>
+	<!--===============================================================================================-->
+	<script
+		src="<c:url value="/assets/login&register/vendor/bootstrap/js/popper.js"/>"></script>
+	<script
+		src="<c:url value="/assets/login&register/vendor/bootstrap/js/bootstrap.min.js"/>"></script>
+	<!--===============================================================================================-->
+	<script
+		src="<c:url value="/assets/login&register/vendor/select2/select2.min.js"/>"></script>
+	<!--===============================================================================================-->
+	<script
+		src="<c:url value="/assets/login&register/vendor/tilt/tilt.jquery.min.js"/>"></script>
+	<script>
+		$('.js-tilt').tilt({
+			scale : 1.1
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="<c:url value="/assets/login&register/js/main.js"/>"></script>
 
-		<decorator:getProperty property="page.script"></decorator:getProperty>
 </body>
 </html>
-

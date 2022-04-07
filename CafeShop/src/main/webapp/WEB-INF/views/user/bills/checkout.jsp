@@ -3,161 +3,106 @@
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 
 <head>
-<title>Thanh toán</title>
+<meta charset="UTF-8">
+<title>Checkout</title>
 </head>
 <body>
-	<div class="row">
-		<div id="sidebar" class="span3">
-			<div class="well well-small">
-				<ul class="nav nav-list">
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Watches</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fine Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Men's Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Vintage & Antique</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Diamonds </a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Beads</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
-					<li style="border: 0">&nbsp;</li>
-					<li><a class="totalInCart" href="cart.html"><strong>Total
-								Amount <span class="badge badge-warning pull-right"
-								style="line-height: 18px;">$448.42</span>
-						</strong></a></li>
-				</ul>
-			</div>
-
-			<div class="well well-small alert alert-warning cntr">
-				<h2>50% Discount</h2>
-				<p>
-					only valid for online order. <br> <br> <a
-						class="defaultBtn" href="#">Click here </a>
-				</p>
-			</div>
-			<div class="well well-small">
-				<a href="#"><img src="assets/img/paypal.jpg"
-					alt="payment method paypal"></a>
-			</div>
-
-			<a class="shopBtn btn-block" href="#">Upcoming products <br>
-				<small>Click to view</small></a> <br> <br>
-			<ul class="nav nav-list promowrapper">
-				<li>
-					<div class="thumbnail">
-						<a class="zoomTool" href="product_details.html"
-							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/bootstrap-ecommerce-templates.png"
-							alt="bootstrap ecommerce templates">
-						<div class="caption">
-							<h4>
-								<a class="defaultBtn" href="product_details.html">VIEW</a> <span
-									class="pull-right">$22.00</span>
-							</h4>
-						</div>
-					</div>
-				</li>
-				<li style="border: 0">&nbsp;</li>
-				<li>
-					<div class="thumbnail">
-						<a class="zoomTool" href="product_details.html"
-							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/shopping-cart-template.png"
-							alt="shopping cart template">
-						<div class="caption">
-							<h4>
-								<a class="defaultBtn" href="product_details.html">VIEW</a> <span
-									class="pull-right">$22.00</span>
-							</h4>
-						</div>
-					</div>
-				</li>
-				<li style="border: 0">&nbsp;</li>
-				<li>
-					<div class="thumbnail">
-						<a class="zoomTool" href="product_details.html"
-							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/bootstrap-template.png"
-							alt="bootstrap template">
-						<div class="caption">
-							<h4>
-								<a class="defaultBtn" href="product_details.html">VIEW</a> <span
-									class="pull-right">$22.00</span>
-							</h4>
-						</div>
-					</div>
-				</li>
-			</ul>
-
-		</div>
-		<div class="span9">
-			<ul class="breadcrumb">
-				<li><a href="index.html">Trang chủ</a> <span class="divider">/</span></li>
-				<li class="active">Thanh toán</li>
-			</ul>
-			<h3>Thanh toán</h3>
-			<hr class="soft" />
+	<!-- Breadcrumb Section Begin -->
+	<section class="breadcrumb-section set-bg"
+		data-setbg="<c:url value="/assets/user2/img/breadcrumb.jpg"/>">
+		<div class="container">
 			<div class="row">
-				<div class="span9">
-					<div class="well">
-						
-						<form:form action="checkout" method="POST" modelAttribute="bills"
-							class="form-horizontal">
-							<h3>Thanh toán đơn hàng</h3>
-							<div class="control-group">
-								<label class="control-label">Họ tên <sup style="color:red">*</sup></label>
-								<div class="controls">
-									<form:input type="text" placeholder=" Mời nhập họ tên"
-										path="display_name" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">E-mail <sup style="color:red">*</sup></label>
-								<div class="controls">
-									<form:input type="email" placeholder=" Mời nhập email"
-										path="user" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Liên hệ <sup style="color:red">*</sup></label>
-								<div class="controls">
-									<form:input type="text" placeholder=" Mời nhập số điện thoại"
-										path="phone" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Địa chỉ <sup style="color:red">*</sup></label>
-								<div class="controls">
-									<form:textarea placeholder=" Mời nhập địa chỉ giao hàng"
-										 rows="5" cols="30" path="address"/>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Ghi chú</label>
-								<div class="controls">
-									<form:textarea rows="5" cols="30" placeholder="Thêm ghi chú ..." path="note"/>
-								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls">
-									<input type="submit" name="submitAccount" value="Đặt hàng"
-										class="shopBtn exclusive">
-								</div>
-							</div>
-						</form:form>
+				<div class="col-lg-12 text-center">
+					<div class="breadcrumb__text">
+						<h2>Checkout</h2>
+						<div class="breadcrumb__option">
+							<a href="<c:url value="/trang-chu"/>">Home</a> <span>Checkout</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
+	<!-- Breadcrumb Section End -->
+
+	<!-- Checkout Section Begin -->
+	<section class="checkout spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h6>
+						<span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
+							here</a> to enter your code
+					</h6>
+				</div>
+			</div>
+			<div class="checkout__form">
+				<h4>Billing Details</h4>
+				<form:form action="checkout" method="POST" modelAttribute="bills">
+					<div class="row">
+						<div class="col-lg-8 col-md-6">
+							<div class="checkout__input">
+								<p>
+									Full Name<span>*</span>
+								</p>
+								<form:input style="color:black" type="text" path="display_name" />
+							</div>
+							<div class="checkout__input">
+								<p>
+									Address<span>*</span>
+								</p>
+								<form:input style="color:black" type="text" placeholder="Street Address"
+									class="checkout__input__add" path="address" />
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="checkout__input">
+										<p>
+											Phone<span>*</span>
+										</p>
+										<form:input style="color:black" type="text" path="phone" />
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="checkout__input">
+										<p>
+											Email<span>*</span>
+										</p>
+										<form:input style="color:black" type="email" path="user" />
+									</div>
+								</div>
+							</div>
+							<div class="checkout__input">
+								<p>Order notes</p>
+								<form:input style="color:black" type="text"
+									placeholder="Notes about your order, e.g. special notes for delivery."
+									path="note" />
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="checkout__order">
+								<h4>Your Order</h4>
+								<div class="checkout__order__products">
+									Products <span>Total</span>
+								</div>
+								<ul>
+									<c:forEach var="item" items="${Cart}">
+										<li>${item.value.product.name }<span><fmt:formatNumber
+													type="number" groupingUsed="true"
+													value="${item.value.totalPrice }" />₫</span></li>
+									</c:forEach>
+								</ul>
+								<div class="checkout__order__total">
+									Total <span><fmt:formatNumber type="number"
+											groupingUsed="true" value="${ TotalPriceCart }" />₫</span>
+								</div>
+								<button type="submit" class="site-btn">PLACE ORDER</button>
+							</div>
+						</div>
+					</div>
+				</form:form>
+			</div>
+		</div>
+	</section>
+	<!-- Checkout Section End -->
 </body>

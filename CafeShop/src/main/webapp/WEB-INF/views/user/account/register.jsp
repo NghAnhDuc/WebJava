@@ -3,153 +3,80 @@
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 
 <head>
-<title>Đăng ký tài khoản</title>
+<title>Register</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div class="row">
-		<div id="sidebar" class="span3">
-			<div class="well well-small">
-				<ul class="nav nav-list">
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Watches</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fine Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Men's Jewelry</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Vintage & Antique</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Diamonds </a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>Loose Beads</a></li>
-					<li><a href="products.html"><span
-							class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
-					<li style="border: 0">&nbsp;</li>
-					<li><a class="totalInCart" href="cart.html"><strong>Total
-								Amount <span class="badge badge-warning pull-right"
-								style="line-height: 18px;">$448.42</span>
-						</strong></a></li>
-				</ul>
-			</div>
 
-			<div class="well well-small alert alert-warning cntr">
-				<h2>50% Discount</h2>
-				<p>
-					only valid for online order. <br> <br> <a
-						class="defaultBtn" href="#">Click here </a>
-				</p>
-			</div>
-			<div class="well well-small">
-				<a href="#"><img src="assets/img/paypal.jpg"
-					alt="payment method paypal"></a>
-			</div>
-
-			<a class="shopBtn btn-block" href="#">Upcoming products <br>
-				<small>Click to view</small></a> <br> <br>
-			<ul class="nav nav-list promowrapper">
-				<li>
-					<div class="thumbnail">
-						<a class="zoomTool" href="product_details.html"
-							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/bootstrap-ecommerce-templates.png"
-							alt="bootstrap ecommerce templates">
-						<div class="caption">
-							<h4>
-								<a class="defaultBtn" href="product_details.html">VIEW</a> <span
-									class="pull-right">$22.00</span>
-							</h4>
-						</div>
-					</div>
-				</li>
-				<li style="border: 0">&nbsp;</li>
-				<li>
-					<div class="thumbnail">
-						<a class="zoomTool" href="product_details.html"
-							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/shopping-cart-template.png"
-							alt="shopping cart template">
-						<div class="caption">
-							<h4>
-								<a class="defaultBtn" href="product_details.html">VIEW</a> <span
-									class="pull-right">$22.00</span>
-							</h4>
-						</div>
-					</div>
-				</li>
-				<li style="border: 0">&nbsp;</li>
-				<li>
-					<div class="thumbnail">
-						<a class="zoomTool" href="product_details.html"
-							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/bootstrap-template.png"
-							alt="bootstrap template">
-						<div class="caption">
-							<h4>
-								<a class="defaultBtn" href="product_details.html">VIEW</a> <span
-									class="pull-right">$22.00</span>
-							</h4>
-						</div>
-					</div>
-				</li>
-			</ul>
-
-		</div>
-		<div class="span9">
-			<ul class="breadcrumb">
-				<li><a href="index.html">Trang chủ</a> <span class="divider">/</span></li>
-				<li class="active">Đăng ký</li>
-			</ul>
-			<h3>Đăng ký</h3>
-			<hr class="soft" />
-			<div class="row">
-				<div class="span9">
-					<div class="well">
-						<h5>Đăng ký tài khoản</h5>
-						<form:form action="dang-ky" method="POST" modelAttribute="user" class="form-horizontal">
-							<div class="control-group">
-								<label class="control-label" for="inputEmail">E-mail </label>
-								<div class="controls">
-									<form:input type="email" class="span3"
-										placeholder="Mời nhập email" path="user" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputPassword">Mật
-									khẩu</label>
-								<div class="controls">
-									<form:input type="password" class="span3"
-										placeholder="Mời nhập mật khẩu" path="password" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputDisplayName">Họ
-									và tên</label>
-								<div class="controls">
-									<form:input type="text" class="span3"
-										placeholder="Mời nhập họ và tên" path="display_name" />
-
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputAddress"> Địa chỉ</label>
-								<div class="controls">
-									<form:input type="text" class="span3"
-										placeholder="Mời nhập địa chỉ" path="address" />
-								</div>
-							</div>
-							<div class="controls">
-								<button type="submit" class="btn block">Đăng ký</button>
-							</div>
-						</</form:form>
-
-					</div>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img
+						src="<c:url value="/assets/login&register/images/img-01.png"/> "
+						alt="IMG">
 				</div>
+
+				<form:form class="login100-form validate-form" action="dang-ky"
+					method="POST" modelAttribute="user">
+					<span class="login100-form-title"> Member Register </span>
+					
+					<c:if test="${not empty status}">
+						<p class="text-center mb-3 text-danger">${status}</p>  					
+					</c:if>
+					
+					<div class="wrap-input100 validate-input"
+						data-validate="Valid email is required: ex@abc.xyz">
+						<form:input class="input100" type="text" name="email"
+							placeholder="Email" path="user"/> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <i class="fa fa-envelope"
+							aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input"
+						data-validate="Password is required">
+						<form:input class="input100" type="password" name="pass"
+							placeholder="Password" path="password"/> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <i class="fa fa-lock"
+							aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input"
+						data-validate="Valid email is required: ex@abc.xyz">
+						<form:input class="input100" type="text" name="yourname"
+							placeholder="Your name" path="display_name"/> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <i class="fa fa-user"
+							aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input"
+						data-validate="Valid email is required: ex@abc.xyz">
+						<form:input class="input100" type="text" name="address"
+							placeholder="Address" path="address"/> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <i class="fa fa-address-card"
+							aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">Register</button>
+					</div>
+					
+					<div class="text-center p-t-12">
+						<span class="txt1"> Forgot </span> <a class="txt2" href="#">
+							Username / Password? </a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="<c:url value="/dang-nhap"/>"> Login your Account <i
+							class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form:form>
 			</div>
 		</div>
 	</div>
