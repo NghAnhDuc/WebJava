@@ -20,14 +20,14 @@ public class UserController extends BaseController{
 	
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.GET)
 	public ModelAndView Register() {
-		_mvShare.setViewName("user/account/register2");
+		_mvShare.setViewName("user/account/register");
 		_mvShare.addObject("user", new Users());
 		return _mvShare;
 	}
 	
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView Login() {
-		_mvShare.setViewName("user/account/login2");
+		_mvShare.setViewName("user/account/login");
 		_mvShare.addObject("user", new Users());
 		return _mvShare;
 	}
@@ -42,7 +42,7 @@ public class UserController extends BaseController{
 		if(count == 0) {	
 			_mvShare.addObject("status", "Đăng ký thất bại!");
 		}
-		_mvShare.setViewName("user/account/register2");
+		_mvShare.setViewName("user/account/register");
 		return _mvShare;
 	}
 	

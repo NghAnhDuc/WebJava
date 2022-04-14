@@ -12,6 +12,4 @@ public class BaseController {
 	@Autowired
 	HomeServiceImpl _homeService;
 	public ModelAndView _mvShare = new ModelAndView();
-	
-	
 }
