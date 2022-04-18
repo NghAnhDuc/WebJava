@@ -4,7 +4,15 @@
 	<artifactId>MTShop</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+		</plugins>
+	</build>
 	<properties>
 		<spring.version>5.2.2.RELEASE</spring.version>
 	</properties>
@@ -76,7 +84,7 @@
 			<artifactId>jbcrypt</artifactId>
 			<version>0.4</version>
 		</dependency>
-		
+
 	</dependencies>
 
 </project>

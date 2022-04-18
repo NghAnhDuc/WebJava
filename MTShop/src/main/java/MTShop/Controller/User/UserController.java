@@ -14,55 +14,59 @@ import MTShop.Entity.Users;
 import MTShop.Service.User.AccountServiceImpl;
 
 @Controller
-public class UserController extends BaseController{
+public class UserController extends BaseController {
 	@Autowired
 	AccountServiceImpl accountService = new AccountServiceImpl();
-	
+
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.GET)
 	public ModelAndView Register() {
 		_mvShare.setViewName("user/account/register");
 		_mvShare.addObject("user", new Users());
 		return _mvShare;
 	}
-	
+
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView Login() {
 		_mvShare.setViewName("user/account/login");
 		_mvShare.addObject("user", new Users());
 		return _mvShare;
 	}
-	
-	
+
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.POST)
-	public ModelAndView CreateAcc(@ModelAttribute("user") Users user) {		
-		int count= accountService.AddAccount(user);
-		if(count > 0) {	
-			_mvShare.addObject("status", "Đăng ký thành công!");
-		}
-		if(count == 0) {	
-			_mvShare.addObject("status", "Đăng ký thất bại!");
+	public ModelAndView CreateAcc(@ModelAttribute("user") Users user) {
+		int res = accountService.CheckUsers(user);
+		int count = accountService.AddAccount(user);
+		if (res == 0) {
+			if (count > 0) {
+				_mvShare.addObject("status", "Đăng ký thành công!");
+			}
+			if (count == 0) {
+				_mvShare.addObject("status", "Đăng ký thất bại!");
+			}
+		} else {
+			_mvShare.addObject("status", "Email đã tồn tại!");
 		}
 		_mvShare.setViewName("user/account/register");
 		return _mvShare;
 	}
-	
+
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
-	public ModelAndView Login(HttpSession session,@ModelAttribute("user") Users user) {
+	public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users user) {
 		user = accountService.CheckAccount(user);
-		if(user != null) {
+		if (user != null) {
 			_mvShare.setViewName("redirect:trang-chu");
 			session.setAttribute("LoginInfo", user);
 
-		}else {	
-			_mvShare.addObject("statusLogin", "Đăng nhập thất bại!");
+		} else {
+			_mvShare.addObject("statusLogin", "Đăng nhập thất bại");
 
 		}
 		return _mvShare;
 	}
-	
+
 	@RequestMapping(value = "/dang-xuat", method = RequestMethod.GET)
 	public String Logout(HttpSession session, HttpServletRequest req) {
 		session.removeAttribute("LoginInfo");
-		return "redirect:"+req.getHeader("Referer");
+		return "redirect:" + req.getHeader("Referer");
 	}
 }

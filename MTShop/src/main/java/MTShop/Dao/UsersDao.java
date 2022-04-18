@@ -6,6 +6,7 @@ import MTShop.Entity.MapperUsers;
 import MTShop.Entity.Users;
 @Repository
 public class UsersDao extends BaseDao{
+	
 	public int AddAccount(Users user) {
 		StringBuffer  sql = new StringBuffer();
 		
@@ -24,6 +25,12 @@ public class UsersDao extends BaseDao{
 		
 		int insert = _jdbcTemplate.update(sql.toString());
 		return insert;
+	}
+	
+	public int cheUsers(Users user) {
+		String sql = "SELECT COUNT(user) FROM `users` WHERE user = '"+user.getUser()+"' ";
+		int res = _jdbcTemplate.queryForObject(sql,Integer.class);
+		return res;
 	}
 	
 	public Users GetUserByAcc(Users user) {

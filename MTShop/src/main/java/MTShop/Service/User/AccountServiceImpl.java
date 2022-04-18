@@ -28,5 +28,10 @@ public class AccountServiceImpl implements IAccountService {
 		}
 		return null;
 	}
+	
+	//ham kiem tra nguoi dung da ton tai hay chua
+	public int CheckUsers(Users user) {
+		return usersDao.cheUsers(user);	
+	}
 
 }
