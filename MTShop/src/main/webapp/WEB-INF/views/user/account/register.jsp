@@ -20,7 +20,7 @@
 
 				<form:form class="login100-form validate-form" action="dang-ky"
 					method="POST" modelAttribute="user">
-					<span class="login100-form-title"> Member Register </span>
+					<span class="login100-form-title"> Member Register</span>
 					
 					<c:if test="${not empty status}">
 						<p class="text-center mb-3 text-danger">${status}</p>  					
