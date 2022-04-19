@@ -174,7 +174,7 @@
 							</c:forEach>
 						</c:if>
 					</div>
-					<div class="product__pagination">
+					<div class="product__pagination" style="text-align:center;">
 						<c:forEach var="item" begin="1" end="${paginatesInfo.totalPage }"
 							varStatus="loop">
 							<c:if test="${ (loop.index) ==  paginatesInfo.currentPage}">
