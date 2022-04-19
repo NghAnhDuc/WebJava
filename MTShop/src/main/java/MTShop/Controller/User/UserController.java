@@ -35,8 +35,8 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.POST)
 	public ModelAndView CreateAcc(@ModelAttribute("user") Users user) {
 		int res = accountService.CheckUsers(user);
-		int count = accountService.AddAccount(user);
 		if (res == 0) {
+			int count = accountService.AddAccount(user);
 			if (count > 0) {
 				_mvShare.addObject("status", "Đăng ký thành công!");
 			}
