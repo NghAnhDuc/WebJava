@@ -20,7 +20,7 @@ public class PaginatesServiceImpl implements IPaginatesService {
 		return start + limit > totalData ? totalData :(start + limit) -1;
 	}
 	private int FindStart(int currentPage, int limit) {
-		return ((currentPage - 1) * limit + 1);
+		return ((currentPage - 1) * limit );
 	}
 	private int SetInfoTotalPage(int totalData, int limit) {
 		int totalPage = 0;

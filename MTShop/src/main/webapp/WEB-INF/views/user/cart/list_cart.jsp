@@ -34,11 +34,11 @@
 						<table>
 							<thead>
 								<tr>
-									<th class="shoping__product">Products</th>
-									<th>Price</th>
-									<th>Quantity</th>
+									<th class="shoping__product" >Products</th>
+									<th style="text-align:center;">Price</th>
+									<th style="text-align:center;">Quantity</th>
 									<th></th>
-									<th>Total</th>
+									<th style="text-align:center;">Total</th>
 									<th></th>
 								</tr>
 							</thead>
@@ -46,7 +46,7 @@
 
 								<c:forEach var="item" items="${Cart}">
 									<tr>
-										<td class="shoping__cart__item"><img
+										<td style="text-align:center;" class="shoping__cart__item"><img
 											src="<c:url value="/assets/user/img/${item.value.product.img }"/>"
 											alt="">
 											<h5>${item.value.product.name }</h5></td>
