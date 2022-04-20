@@ -117,13 +117,13 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="<c:url value="/assets/user2/img/banner/banner-1.jpg"/> "
+						<img src="<c:url value="/assets/user2/img/banner/banner4.webp"/> "
 							alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="<c:url value="/assets/user2/img/banner/banner-2.jpg"/> "
+						<img src="<c:url value="/assets/user2/img/banner/banner2.jpg"/> "
 							alt="">
 					</div>
 				</div>
