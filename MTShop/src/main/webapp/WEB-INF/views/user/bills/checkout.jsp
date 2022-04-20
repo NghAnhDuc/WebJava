@@ -40,7 +40,7 @@
 				<h4>Billing Details</h4>
 				<form:form action="checkout" method="POST" modelAttribute="bills">
 					<div class="row">
-						<div class="col-lg-8 col-md-6">
+						<div class="col-lg-4 col-md-6">
 							<div class="checkout__input">
 								<p>
 									Full Name<span>*</span>
@@ -51,27 +51,26 @@
 								<p>
 									Address<span>*</span>
 								</p>
-								<form:input style="color:black" type="text" placeholder="Street Address"
-									class="checkout__input__add" path="address" />
+								<form:input style="color:black" type="text"
+									placeholder="Street Address" class="checkout__input__add"
+									path="address" />
 							</div>
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="checkout__input">
-										<p>
-											Phone<span>*</span>
-										</p>
-										<form:input style="color:black" type="text" path="phone" />
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="checkout__input">
-										<p>
-											Email<span>*</span>
-										</p>
-										<form:input style="color:black" type="email" path="user" />
-									</div>
-								</div>
+							<div class="checkout__input">
+								<p>
+									Phone<span>*</span>
+								</p>
+								<form:input style="color:black" type="text" path="phone" />
 							</div>
+							<div class="checkout__input">
+								<p>
+									Email<span>*</span>
+								</p>
+								<form:input style="color:black" type="email" path="user" />
+							</div>
+							<!-- <div class="row">
+								<div class="col-lg-6"></div>
+								<div class="col-lg-6"></div>
+							</div> -->
 							<div class="checkout__input">
 								<p>Order notes</p>
 								<form:input style="color:black" type="text"
@@ -79,11 +78,11 @@
 									path="note" />
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6">
+						<div class="col-lg-8 col-md-6">
 							<div class="checkout__order">
 								<h4>Your Order</h4>
 								<div class="checkout__order__products">
-									Products <span>Total</span>
+									Products <span>Price</span>
 								</div>
 								<ul>
 									<c:forEach var="item" items="${Cart}">
