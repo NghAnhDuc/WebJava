@@ -30,16 +30,16 @@ public class HomeServiceImpl implements IHomeService {
 		return categoriesDao.GetDataCategory();
 	}
 	
-	public List<ProductsDto> GetDataProducts() {
-		List<ProductsDto> list = productsDao.GetDataProductsNew();
+//	public List<ProductsDto> GetDataProducts() {
+//		List<ProductsDto> list = productsDao.GetAllProducts();
+//		return list;
+//	}
+	public List<ProductsDto> GetDataHighlightProducts() {
+		List<ProductsDto> list = productsDao.GetDataHighlightProducts();
 		return list;
 	}
-	public List<ProductsDto> GetDataProductsHighlight() {
-		List<ProductsDto> list = productsDao.GetDataProductsHighlight();
-		return list;
-	}
-	public List<ProductsDto> GetDataProductsNew() {
-		List<ProductsDto> list = productsDao.GetDataProductsNew();
+	public List<ProductsDto> GetDataNewProducts() {
+		List<ProductsDto> list = productsDao.GetDataNewProducts();
 		return list;
 	}
 

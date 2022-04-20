@@ -31,7 +31,7 @@ public class CartController extends BaseController {
 	public ModelAndView Index() {
 		_mvShare.addObject("slides", _homeService.GetDataSlide());
 		_mvShare.addObject("categories", _homeService.GetDataCategory());
-		_mvShare.addObject("products", _homeService.GetDataProducts());
+//		_mvShare.addObject("products", _homeService.GetDataProducts());
 		_mvShare.setViewName("user/cart/list_cart");
 		return _mvShare;
 	}
@@ -101,6 +101,8 @@ public class CartController extends BaseController {
 			billsService.AddBillsDetail(carts);
 		}
 		session.removeAttribute("Cart");
+		session.setAttribute("TotalQuantyCart", 0);
+		session.setAttribute("TotalPriceCart", 0);
 		return "redirect:trang-chu";
 	}
 	

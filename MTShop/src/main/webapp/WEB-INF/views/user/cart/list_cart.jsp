@@ -121,8 +121,13 @@
 							<a href="<c:url value="/dang-nhap" />" class="primary-btn">PROCEED
 								TO CHECKOUT</a>
 						</c:if>
-						<c:if test="${not empty LoginInfo }">
+						
+						<c:if test="${not empty LoginInfo && TotalPriceCart > 0}">
 							<a href="<c:url value="/checkout" />" class="primary-btn">PROCEED
+								TO CHECKOUT</a>
+						</c:if>
+						<c:if test="${TotalPriceCart == 0 }">
+							<a href="<c:url value="/trang-chu" />" class="primary-btn">PROCEED
 								TO CHECKOUT</a>
 						</c:if>
 
