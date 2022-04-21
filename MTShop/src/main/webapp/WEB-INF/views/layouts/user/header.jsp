@@ -46,11 +46,10 @@
 						</c:if>
 						<c:if test="${not empty LoginInfo }">
 							<div class="header__top__right__auth">
-								<a href="<c:url value="/dang-xuat"/>"><i
-									class="fa fa-sign-out"></i>Logout</a>
+								<a href="<c:url value="/dang-xuat"/>"><i class="fa fa-sign-out"></i>Logout</a>
 							</div>
 
-
+							
 						</c:if>
 					</div>
 				</div>

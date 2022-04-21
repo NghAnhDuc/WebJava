@@ -1,0 +1,19 @@
+package MTShop.Entity;
+
+public class Search {
+	private String content;
+
+	public Search() {
+		super();
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+	
+	
+}

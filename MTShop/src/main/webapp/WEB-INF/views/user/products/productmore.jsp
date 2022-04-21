@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 
 <head>
-<title>Shop</title>
+<title>More Product</title>
 </head>
 <body>
 
@@ -111,7 +111,7 @@
 				<div class="col-lg-9 col-md-7">
 					<div class="product__discount">
 						<div class="section-title product__discount__title">
-							<h2>Product</h2>
+							<h2>${productname}</h2>
 						</div>
 						<div>
 							<div class="row">
@@ -167,7 +167,7 @@
 									</div>
 								</div>
 								<c:if
-									test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1) == productsPaginate.size() }">
+									test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1) == productsPaginate.size()}">
 									<c:if test="${ (loop.index + 1) < productsPaginate.size() }">
 									</c:if>
 								</c:if>
@@ -178,11 +178,11 @@
 						<c:forEach var="item" begin="1" end="${paginatesInfo.totalPage }"
 							varStatus="loop">
 							<c:if test="${ (loop.index) ==  paginatesInfo.currentPage}">
-								<a href="<c:url value="/san-pham/${loop.index}"/>"
+								<a href="<c:url value="/${product_link}/${loop.index}"/>"
 									style="color: black">${(loop.index)}</a>
 							</c:if>
 							<c:if test="${ (loop.index) !=  paginatesInfo.currentPage}">
-								<a href="<c:url value="/san-pham/${loop.index}"/>">${ (loop.index)}</a>
+								<a href="<c:url value="/${productlink}/${loop.index}"/>">${ (loop.index)}</a>
 							</c:if>
 						</c:forEach>
 						<%-- <a

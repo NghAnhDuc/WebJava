@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 
 <head>
-<title>Shop</title>
+<title>Search</title>
 </head>
 <body>
 
@@ -111,7 +111,7 @@
 				<div class="col-lg-9 col-md-7">
 					<div class="product__discount">
 						<div class="section-title product__discount__title">
-							<h2>Product</h2>
+							<h2>Search Product</h2>
 						</div>
 						<div>
 							<div class="row">
@@ -139,8 +139,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<c:if test="${ productsPaginate.size() > 0 }">
-							<c:forEach var="item" items="${ productsPaginate }"
+						<c:if test="${ productSearch.size() > 0 }">
+							<c:forEach var="item" items="${ productSearch }"
 								varStatus="loop">
 								<div class="col-lg-4 col-md-6 col-sm-6">
 									<div class="product__item">
@@ -167,8 +167,8 @@
 									</div>
 								</div>
 								<c:if
-									test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1) == productsPaginate.size() }">
-									<c:if test="${ (loop.index + 1) < productsPaginate.size() }">
+									test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1) == productSearch.size() }">
+									<c:if test="${ (loop.index + 1) < productSearch.size() }">
 									</c:if>
 								</c:if>
 							</c:forEach>

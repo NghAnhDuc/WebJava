@@ -41,6 +41,13 @@ public class ProductsDao extends BaseDao {
 		return sql;
 	}
 
+	/* Open All product Search */
+	private String SqlProductSearch(String content) {
+		StringBuffer sql = SqlString();
+		sql.append(" WHERE p.name LIKE N'%"+content+"%' ");
+		return sql.toString();
+	}
+
 	/* Open New Product, Highlight Product */
 	private String SqlProduct(boolean newProduct, boolean highlight) {
 		StringBuffer sql = SqlString();
@@ -56,15 +63,43 @@ public class ProductsDao extends BaseDao {
 		sql.append("LIMIT 8 ");
 		return sql.toString();
 	}
+	
+	/* Open All New Product, Highlight Product */
+	private String SqlProductAll(boolean newProduct, boolean highlight) {
+		StringBuffer sql = SqlString();
+		sql.append("WHERE 1 = 1 ");
+		if (newProduct) {
+			sql.append("AND p.new_product = true ");
+		}
+		if (highlight) {
+			sql.append("AND p.highlight = true ");
+		}
+		sql.append("GROUP BY p.id, c.id_product ");
+		sql.append("ORDER BY RAND() ");
+		return sql.toString();
+	}
 
-	public List<ProductsDto> GetDataNewProducts() {
+	public List<ProductsDto> GetDataProductsNew() {
 		String sql = SqlProduct(YES, NO);
 		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return list;
 	}
 
-	public List<ProductsDto> GetDataHighlightProducts() {
+	public List<ProductsDto> GetDataProductsHighlight() {
 		String sql = SqlProduct(NO, YES);
+		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return list;
+	}
+	
+	//get all product
+	public List<ProductsDto> GetDataProductsNewAll() {
+		String sql = SqlProductAll(YES, NO);
+		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return list;
+	}
+
+	public List<ProductsDto> GetDataProductsHighlightAll() {
+		String sql = SqlProductAll(NO, YES);
 		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return list;
 	}
@@ -180,6 +215,13 @@ public class ProductsDao extends BaseDao {
 		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return list;
 	}
+	
+	/* Open All Product Search  */
+	public List<ProductsDto> GetAllProductsSearch(String content) {
+		String sql = SqlProductSearch(content).toString();
+		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return list;
+	}
 
 	private String SqlProductPaginate2(int start, int totalPage) {
 		StringBuffer sql = SqlString();
@@ -200,10 +242,12 @@ public class ProductsDao extends BaseDao {
 	/* End All Product  */
 	
 	
-	
 	public List<ProductsDto> GetDataProducts() {
 		String sql = SqlProduct(YES, NO);
 		List<ProductsDto> list = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return list;
 	}
+	
+
+
 }

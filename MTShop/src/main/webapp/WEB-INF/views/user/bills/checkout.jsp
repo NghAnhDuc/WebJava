@@ -95,10 +95,14 @@
 									Total <span><fmt:formatNumber type="number"
 											groupingUsed="true" value="${ TotalPriceCart }" />₫</span>
 								</div>
-								<button type="submit" class="site-btn">PLACE ORDER</button>
+								<button type="submit" class="site-btn" onClick="myFunction()" >PLACE ORDER</button>
+								<script>
+									function myFunction() {
+										alert("Đặt hàng thành công !");
+									}
+								</script>
 							</div>
 						</div>
-					</div>
 				</form:form>
 			</div>
 		</div>

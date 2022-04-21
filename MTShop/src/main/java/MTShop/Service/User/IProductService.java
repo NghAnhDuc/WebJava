@@ -13,4 +13,5 @@ public interface IProductService {
 	public ProductsDto GetProductByID(long id);
 	public List<ProductsDto> GetDataProductsPaginate2(int start, int totalPage);
 	public List<ProductsDto> GetAllProducts();
+	public List<ProductsDto> GetAllProductsSearch(String content);
 }

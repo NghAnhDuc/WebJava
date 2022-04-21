@@ -23,7 +23,7 @@ import MTShop.Service.User.CartServiceImpl;
 public class CartController extends BaseController {
 	@Autowired
 	private CartServiceImpl cartService = new CartServiceImpl();
-	
+
 	@Autowired
 	private BillsServiceImpl billsService = new BillsServiceImpl();
 
@@ -31,7 +31,7 @@ public class CartController extends BaseController {
 	public ModelAndView Index() {
 		_mvShare.addObject("slides", _homeService.GetDataSlide());
 		_mvShare.addObject("categories", _homeService.GetDataCategory());
-//		_mvShare.addObject("products", _homeService.GetDataProducts());
+		_mvShare.addObject("products", _homeService.GetDataProducts());
 		_mvShare.setViewName("user/cart/list_cart");
 		return _mvShare;
 	}
@@ -75,13 +75,13 @@ public class CartController extends BaseController {
 		session.setAttribute("TotalPriceCart", cartService.TotalPrice(cart));
 		return "redirect:" + req.getHeader("Referer");
 	}
-	
+
 	@RequestMapping(value = "checkout", method = RequestMethod.GET)
 	public ModelAndView CheckOut(HttpServletRequest req, HttpSession session) {
 		_mvShare.setViewName("user/bills/checkout");
 		Bills bills = new Bills();
-		Users loginInfo = (Users)session.getAttribute("LoginInfo");
-		if(loginInfo != null) {
+		Users loginInfo = (Users) session.getAttribute("LoginInfo");
+		if (loginInfo != null) {
 			bills.setAddress(loginInfo.getAddress());
 			bills.setDisplay_name(loginInfo.getDisplay_name());
 			bills.setUser(loginInfo.getUser());
@@ -101,10 +101,7 @@ public class CartController extends BaseController {
 			billsService.AddBillsDetail(carts);
 		}
 		session.removeAttribute("Cart");
-		session.setAttribute("TotalQuantyCart", 0);
-		session.setAttribute("TotalPriceCart", 0);
 		return "redirect:trang-chu";
 	}
-	
-	
+
 }

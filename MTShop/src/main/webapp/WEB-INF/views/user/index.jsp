@@ -23,13 +23,13 @@
 				<div class="col-lg-9">
 					<div class="hero__search">
 						<div class="hero__search__form">
-							<form action="#">
+							<form:form action="search-product" method="POST"  >
 								<!-- <div class="hero__search__categories">
 									All Categories <span class="arrow_carrot-down"></span>
 								</div> -->
-								<input type="text" placeholder="What do you need?">
+								<input type="text" placeholder="What do you need?" name="content"/>
 								<button type="submit" class="site-btn">SEARCH</button>
-							</form>
+							</form:form>
 						</div>
 						<div class="hero__search__phone">
 							<div class="hero__search__phone__icon">
@@ -105,7 +105,7 @@
 
 					</c:forEach>
 				</c:if>
-				<a href="#" class="primary-btn text-white m-auto ">More</a>
+				<a href="<c:url value="/featured-product"/>" class="primary-btn text-white m-auto ">More</a>
 			</div>
 		</div>
 	</section>
@@ -173,7 +173,7 @@
 
 					</c:forEach>
 				</c:if>
-				<a href="#" class="primary-btn text-white m-auto ">More</a>
+				<a href="<c:url value="/new-product"/>" class="primary-btn text-white m-auto ">More</a>
 			</div>
 		</div>
 	</section>
