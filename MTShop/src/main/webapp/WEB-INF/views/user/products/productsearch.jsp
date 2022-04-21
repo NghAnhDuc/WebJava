@@ -39,7 +39,7 @@
 								</c:forEach>
 							</ul>
 						</div>
-						<div class="sidebar__item">
+						<!-- <div class="sidebar__item">
 							<h4>Price</h4>
 							<div class="price-range-wrap">
 								<div
@@ -105,7 +105,7 @@
 								<label for="tiny"> Tiny <input type="radio" id="tiny">
 								</label>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-7">

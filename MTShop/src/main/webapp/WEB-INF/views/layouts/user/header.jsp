@@ -81,7 +81,7 @@
 			<div class="col-lg-3">
 				<div class="header__cart">
 					<ul>
-						<li><a href="#"><i class="fa fa-heart"></i></a></li>
+						
 						<li><a href="<c:url value="/gio-hang"/>"> <i
 								class="fa fa-shopping-bag"></i> <c:if
 									test="${TotalQuantyCart > 0}">

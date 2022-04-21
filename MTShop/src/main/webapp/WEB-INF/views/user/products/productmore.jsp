@@ -39,7 +39,7 @@
 								</c:forEach>
 							</ul>
 						</div>
-						<div class="sidebar__item">
+						<!-- <div class="sidebar__item">
 							<h4>Price</h4>
 							<div class="price-range-wrap">
 								<div
@@ -106,7 +106,7 @@
 								</label>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-lg-9 col-md-7">
 					<div class="product__discount">
